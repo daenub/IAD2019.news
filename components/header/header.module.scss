@@ -18,6 +18,7 @@ $scroll-button-width: $grid-gutter-x;
   @include font-styles("h3");
   color: $white;
   text-transform: uppercase;
+  letter-spacing: 0.025em;
   background-color: $cobalt;
 
   padding: .3em .5em .25em;

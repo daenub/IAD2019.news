@@ -34,13 +34,18 @@
   width: 1.5rem;
   fill: $tundora;
 
-  transition: .2s fill ease-out;
+  transition: .2s ease-out;
+  transition-property: fill, opacity;
 
   .like--liked & {
     fill: $gamboge;
-    transition-duration: .5s;
+    transition-duration: .5s, .2s;
     transition-timing-function: ease-in-out;
     animation: heartbeat ease-in-out .5s forwards;
+  }
+
+  &:hover {
+    opacity: 0.6;
   }
 }
 

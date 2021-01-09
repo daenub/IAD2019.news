@@ -1,7 +1,7 @@
 @import "../../styles/typography";
 @import "../../styles/variables";
 
-$scroll-button-width: $grid-gutter-x * 2;
+$scroll-button-width: $grid-gutter-x;
 
 .header {
   grid-column: 1 / -1;
@@ -40,10 +40,11 @@ $scroll-button-width: $grid-gutter-x * 2;
   &::after {
     content: "";
     display: block;
+    pointer-events: none;
 
     position: absolute;
     height: 100%;
-    width: $grid-gutter-x * 2;
+    width: $scroll-button-width * .75;
     top: 0;
     z-index: 10;
 

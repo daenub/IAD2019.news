@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&family=Source+Serif+Pro:wght@600&display=swap');
+
+@import "./reset";
+@import "./typography";
+@import "./variables";
+
+html {
+  font-size: $font-size-root;
+}
+
+body {
+  font-size: 1rem;
+  background: $gallery;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.show-for-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

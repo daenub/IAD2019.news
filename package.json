@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash-es": "^4.17.15",
     "newsapi": "^2.4.1",
     "next": "9.5.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "sass": "^1.30.0"
   }
 }

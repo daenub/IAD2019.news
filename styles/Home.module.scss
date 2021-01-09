@@ -1,0 +1,14 @@
+@import "./variables";
+@import "./mixins";
+@import "./typography";
+
+.container {
+  background: $white;
+  max-width: $max-width + 2 * $grid-gutter-x;
+  margin: 0 auto;
+  padding: 0 $grid-gutter-x;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0 $grid-gutter-x;
+}

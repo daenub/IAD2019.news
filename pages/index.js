@@ -1,9 +1,22 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 import {getNewsArticles, getHeadlines} from "../lib/news"
 
-export default function Home({articles, headlines}) {
+import Header from "../components/header"
+import MainArticle from "../components/article/mainArticle"
+import SubArticle from "../components/article/subArticle"
+import Article from "../components/article/article"
+import Column from "../components/article/column"
+import Like from "../components/like"
+import Category from "../components/category"
+import Weather from "../components/weather"
+
+import Ad from "../components/ad"
+
+export default function Home({articlesByCategory, headlines}) {
+  const [mainHeadlineArticle, subHeadlinearticle, columnArticle, ...headlineArticles] = headlines
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,25 +24,22 @@ export default function Home({articles, headlines}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          There are {articles.length} Articles
-        </h1>
+      <Header />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <h2 className={"show-for-sr"}>Aktuelles</h2>
+      <MainArticle key={mainHeadlineArticle.url} article={mainHeadlineArticle} />
+      <SubArticle key={subHeadlinearticle.url} article={subHeadlinearticle} />
+      <Column key={columnArticle.url} article={columnArticle} />
+      <Weather />
 
-        <div className={styles.grid}>
-          {articles.map(article => (
-            <a key={article.url} href={article.url} className={styles.card}>
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-            </a>
-          ))}
-        </div>
-      </main>
+      {
+        headlineArticles.slice(0, 3).map(article => <Article key={article.url} article={article} />)
+      }
+      <Ad />
+
+      {
+        articlesByCategory.map(props => <Category key={props.category} {...props} />)
+      }
     </div>
   )
 }
@@ -40,7 +50,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      articles: articles,
+      articlesByCategory: articles,
       headlines: headlines
     }, // will be passed to the page component as props
   }

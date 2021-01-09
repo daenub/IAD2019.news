@@ -1,0 +1,25 @@
+@import "../../styles/typography";
+@import "../../styles/variables";
+
+.category {
+  @include font-styles("h4");
+  grid-column-end: span 12;
+
+  border-top: 1px solid $tundora;
+  margin-bottom: 2rem;
+  padding-top: 0.625rem;
+}
+
+.category__word-wrapper {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: -.25rem;
+    top: -0.625rem;
+    height: .25rem;
+    background-color: $sunglow;
+  }
+}

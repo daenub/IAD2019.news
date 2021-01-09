@@ -1,0 +1,40 @@
+@import "../../styles/typography";
+@import "../../styles/variables";
+
+.ad {
+  @include font-styles("h3");
+  grid-column-end: span 12;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+
+  overflow: hidden;
+  text-align: center;
+
+  background: $gallery;
+}
+
+@keyframes move-in-move-out {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ad__letter {
+  display: inline-block;
+  animation: move-in-move-out cubic-bezier(.86,0,.07,1) 7.5s infinite;
+
+  @for $i from 1 through 7 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.05s * $i;
+    }
+  }
+}

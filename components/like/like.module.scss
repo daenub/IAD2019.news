@@ -1,0 +1,55 @@
+@import "../../styles/typography";
+@import "../../styles/variables";
+
+.like {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.like__likes {
+  margin-right: .5rem;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like__icon {
+  display: block;
+  width: 1.5rem;
+  fill: $tundora;
+
+  transition: .2s fill ease-out;
+
+  .like--liked & {
+    fill: $gamboge;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    animation: heartbeat ease-in-out .5s forwards;
+  }
+}
+
+.like__label {
+  cursor: pointer;
+}
+
+.like__checkbox {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}

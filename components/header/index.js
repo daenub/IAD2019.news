@@ -99,10 +99,10 @@ const Navigation = () => {
       <ScrollLeftButton onClick={() => scroll("left")} />
       <ul ref={listRef} className={styles["navigation__list"]}>
         <li className={styles["navigation__item"]}>
-          <a href={`#aktuelles`} className={styles["navigation__link"]}>Aktuelles</a>
+          <a href={`#aktuelles`} className={cn(styles["navigation__link"], styles["navigation__link--active"])}>Aktuelles</a>
         </li>
         {
-          categories.map((c) => (
+          categories.map((c, i) => (
             <li key={c} className={styles["navigation__item"]}>
               <a href={`#${c}`} className={styles["navigation__link"]}>{c}</a>
             </li>

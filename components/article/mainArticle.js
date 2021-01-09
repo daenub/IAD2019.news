@@ -3,8 +3,6 @@ import styles from "./article.module.scss"
 
 import Like from "../like"
 import {formatDate} from "../../lib/date"
-import {randomItem} from "../../lib/utils"
-import {getCategories} from "../../lib/categories"
 
 const MainArticle = ({article}) => {
   return (
@@ -12,7 +10,7 @@ const MainArticle = ({article}) => {
       <div className={styles["article__image-wrapper"]}>
         <img alt={""} src={article.urlToImage} className={styles["article__image"]} />
       </div>
-      <span className={styles["article__label"]}>{randomItem(getCategories())}</span>
+      <span className={styles["article__label"]}>{article.category}</span>
       <h2 className={styles["article__title"]}>
         <a href={article.url}>
           {article.title}

@@ -101,6 +101,7 @@
 .article__footer {
   @include font-styles("small");
   color: $tundora;
+  letter-spacing: 0.02em;
 
   display: flex;
   justify-content: space-between;

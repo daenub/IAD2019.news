@@ -7,7 +7,9 @@ import {formatDate} from "../../lib/date"
 const Column = ({article}) => {
   return (
     <article className={cn(styles.article, styles["article--column"])}>
-      <img alt={""} src={article.urlToImage} className={styles["article__image"]} />
+      <div className={styles["article__image-wrapper"]}>
+        <img alt={""} src={article.urlToImage} className={styles["article__image"]} />
+      </div>
       <span className={styles["article__type"]}>Kolumne</span>
       <h2 className={styles["article__title"]}>
         <a href={article.url}>

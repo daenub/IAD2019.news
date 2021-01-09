@@ -9,7 +9,9 @@ import {getCategories} from "../../lib/categories"
 const MainArticle = ({article}) => {
   return (
     <article className={cn(styles.article, styles["article--main"])}>
-      <img alt={""} src={article.urlToImage} className={styles["article__image"]} />
+      <div className={styles["article__image-wrapper"]}>
+        <img alt={""} src={article.urlToImage} className={styles["article__image"]} />
+      </div>
       <span className={styles["article__label"]}>{randomItem(getCategories())}</span>
       <h2 className={styles["article__title"]}>
         <a href={article.url}>

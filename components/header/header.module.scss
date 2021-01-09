@@ -141,7 +141,7 @@ $scroll-button-width: $grid-gutter-x;
   @include font-styles("h5");
   letter-spacing: 0.025em;
   white-space: nowrap;
-  margin-right: 2.25rem;
+  margin-right: 3rem;
 
   &::last-child {
     margin-right: 0;

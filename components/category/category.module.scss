@@ -1,6 +1,8 @@
 @import "../../styles/typography";
 @import "../../styles/variables";
 
+$line-space: 1rem;
+
 .category {
   @include font-styles("h2");
   grid-column-end: span 12;
@@ -8,19 +10,20 @@
   border-top: 1px solid $tundora;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  padding-top: 0.625rem;
+  padding-top: $line-space;
 }
 
 .category__word-wrapper {
   position: relative;
+  display: inline-block;
 
   &::before {
     content: '';
     position: absolute;
     left: 0;
     right: -.25rem;
-    top: -0.5rem;
-    height: .25rem;
+    top: - $line-space;
+    height: .375rem;
     background-color: $sunglow;
   }
 }

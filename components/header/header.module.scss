@@ -1,7 +1,8 @@
 @import "../../styles/typography";
 @import "../../styles/variables";
 
-$scroll-button-width: $grid-gutter-x;
+$scroll-button-width: $grid-gutter;
+$scroll-button-width-medium: $grid-gutter-medium;
 
 .header {
   grid-column: 1 / -1;
@@ -11,7 +12,11 @@ $scroll-button-width: $grid-gutter-x;
   flex-wrap: wrap;
 
   padding-top: 3rem;
-  margin-bottom: $grid-gutter-x;
+  margin-bottom: $grid-gutter;
+
+  @include breakpoint(medium) {
+    margin-bottom: $grid-gutter-medium;
+  }
 }
 
 .header__title {
@@ -54,16 +59,28 @@ $scroll-button-width: $grid-gutter-x;
 
     transition: .2s ease;
     transition-property: opacity, visibility;
+
+    @include breakpoint(medium) {
+      width: $scroll-button-width-medium * .75;
+    }
   }
 
   &::before {
     left: $scroll-button-width;
     background: linear-gradient(to right, $white, transparent);
+
+    @include breakpoint(medium) {
+      left: $scroll-button-width-medium;
+    }
   }
 
   &::after {
     right: $scroll-button-width;
     background: linear-gradient(to left, $white, transparent);
+
+    @include breakpoint(medium) {
+      right: $scroll-button-width-medium;
+    }
   }
 }
 
@@ -104,6 +121,10 @@ $scroll-button-width: $grid-gutter-x;
   svg {
     width: 1.25rem;
   }
+
+  @include breakpoint(medium) {
+    width: $scroll-button-width-medium;
+  }
 }
 
 .navigation__scroll-button--left {
@@ -135,6 +156,10 @@ $scroll-button-width: $grid-gutter-x;
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+
+  @include breakpoint(medium) {
+    max-width: calc(100% - #{2 * $scroll-button-width-medium});
+  }
 }
 
 .navigation__item {

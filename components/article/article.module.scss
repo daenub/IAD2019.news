@@ -7,30 +7,66 @@
   border-bottom: 1px solid $mercury;
   margin-bottom: 2rem;
 
-  grid-column-end: span 4;
+  grid-column-end: span 12;
 
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(large) {
+    grid-column-end: span 4;
+  }
 }
 
 .article--main {
-  grid-column-end: span 8;
+  grid-column-end: span 12;
+
+  @include breakpoint(medium) {
+    grid-column-end: span 7;
+  }
+
+  @include breakpoint(large) {
+    grid-column-end: span 8;
+  }
 }
 
 .article--sub {
-  grid-column-end: span 4;
+  grid-column-end: span 12;
+
+  @include breakpoint(medium) {
+    grid-column-end: span 5;
+  }
+
+  @include breakpoint(large) {
+    grid-column-end: span 4;
+  }
 }
 
 .article--category-main {
-  grid-column-end: span 6;
+  grid-column-end: span 12;
+
+  @include breakpoint(medium) {
+    grid-column-end: span 6;
+  }
 }
 
 .article--column {
-  grid-column-end: span 6;
+  grid-column-end: span 12;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0 $grid-gutter-x;
+  grid-gap: 0 $grid-gutter;
   grid-template-areas: "image type" "image title" "image footer";
+
+  @include breakpoint(medium) {
+    grid-gap: 0 $grid-gutter-medium;
+    grid-column-end: span 6;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "type" "title" "footer";
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image type" "image title" "image footer";
+  }
 }
 
 .article__label {
@@ -39,13 +75,18 @@
   color: $white;
 
   position: absolute;
-  top: $grid-gutter-x / 2;
-  left: $grid-gutter-x / 2;
+  top: $grid-gutter / 2;
+  left: $grid-gutter / 2;
 
   padding: .25em .75em .35em;
 
   line-height: 1;
   letter-spacing: 0.02em;
+
+  @include breakpoint(medium) {
+    top: $grid-gutter-medium / 2;
+    left: $grid-gutter-medium / 2;
+  }
 }
 
 .article__image-wrapper {
@@ -55,12 +96,18 @@
   margin-bottom: 1.25rem;
 
   .article--sub & {
-    padding-bottom: percentage(800 / 1200);
+    @include breakpoint(medium) {
+      padding-bottom: percentage(800 / 1200);
+    }
   }
 
   .article--column & {
     grid-area: image;
     margin-bottom: 0;
+    
+    @include breakpoint(medium) {
+      margin-bottom: 1.25rem;
+    }
   }
 }
 

@@ -2,13 +2,26 @@
 @import "../../styles/variables";
 
 .weather {
-  grid-column-end: span 6;
+  grid-column-end: span 12;
 
   display: flex;
   margin-bottom: 2rem;
 
   background: $cobalt;
   color: $white;
+
+  @include breakpoint(medium) {
+    grid-column-end: span 6;
+
+    flex-direction: column;
+    // justify-content: center;
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+  }
 }
 
 .weather__today {
@@ -16,7 +29,16 @@
   flex: 0 0 50%;
   background: $cobalt;
   color: $white;
-  padding: $grid-gutter-x / 2;
+  padding: 2rem $grid-gutter / 2 $grid-gutter / 2;
+
+  @include breakpoint(medium) {
+    flex: 0 0 auto;
+    padding: 2rem $grid-gutter-medium / 2 $grid-gutter-medium / 2;
+  }
+
+  @include breakpoint(large) {
+    flex: 0 0 50%;
+  }
 }
 
 .weather__forecast {
@@ -26,7 +48,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: $grid-gutter-x / 2;
+  padding: $grid-gutter / 2;
+
+  @include breakpoint(medium) {
+    flex: 0 0 auto;
+    padding: $grid-gutter-medium / 2;
+  }
+
+  @include breakpoint(large) {
+    flex: 0 0 50%;
+  }
 }
 
 .weather__title {

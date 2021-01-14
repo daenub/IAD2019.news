@@ -4,11 +4,17 @@
 
 .container {
   background: $white;
-  max-width: $max-width + 2 * $grid-gutter-x;
+  max-width: $max-width + 2 * $grid-gutter;
   margin: 0 auto;
-  padding: 0 $grid-gutter-x;
+  padding: 0 $grid-gutter;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 0 $grid-gutter-x;
+  grid-gap: 0 $grid-gutter;
+
+  @include breakpoint(medium) {
+    max-width: $max-width + 2 * $grid-gutter-medium;
+    padding: 0 $grid-gutter-medium;
+    grid-gap: 0 $grid-gutter-medium;
+  }
 }

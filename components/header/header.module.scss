@@ -15,7 +15,7 @@ $scroll-button-width: $grid-gutter-x;
 }
 
 .header__title {
-  @include font-styles("h3");
+  @include font-styles("h1");
   color: $white;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -138,7 +138,7 @@ $scroll-button-width: $grid-gutter-x;
 }
 
 .navigation__item {
-  @include font-styles("h5");
+  @include font-styles("h3");
   letter-spacing: 0.025em;
   white-space: nowrap;
   margin-right: 3rem;

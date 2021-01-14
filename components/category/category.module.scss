@@ -2,7 +2,7 @@
 @import "../../styles/variables";
 
 .category {
-  @include font-styles("h4");
+  @include font-styles("h2");
   grid-column-end: span 12;
 
   border-top: 1px solid $tundora;

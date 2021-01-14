@@ -72,16 +72,16 @@
 }
 
 .article__title {
-  @include font-styles("h5");
+  @include font-styles("h3");
   margin-bottom: 0.6rem;
 
   .article--main & {
-    @include font-styles("h3");
+    @include font-styles("h1");
   }
 
   .article--sub &,
   .article--category-main & {
-    @include font-styles("h4");
+    @include font-styles("h2");
   }
 
   .article--column & {

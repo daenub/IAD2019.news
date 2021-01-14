@@ -9,7 +9,7 @@ const Category = ({category, articles}) => {
   const mainArticles = articles.slice(0,2)
   return (
     <React.Fragment>
-      <h2 className={styles.category}>
+      <h2 className={styles.category} id={category}>
         <span className={styles["category__word-wrapper"]}>
           {category}
         </span>

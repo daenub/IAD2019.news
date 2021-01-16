@@ -41,6 +41,8 @@ const useScrollable = (overflowRef) => {
       scrollChecker()
     }, 16.667)
 
+    scrollChecker()
+
     window.addEventListener("resize", resizeHandler)
 
     if (listEl) {

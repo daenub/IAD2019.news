@@ -39,17 +39,18 @@
   padding: $grid-gutter 0;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, min-content);
   grid-auto-rows: min-content;
   grid-template-areas: "title title" "temparatur icon" "condition icon";
 
   @include breakpoint(medium) {
     flex: 0 0 auto;
-    padding: $grid-gutter-medium 0;
+    padding: $grid-gutter-medium 0 0;
   }
 
   @include breakpoint(large) {
     flex: 0 0 50%;
+    padding: $grid-gutter-medium 0;
   }
 }
 
@@ -60,26 +61,33 @@
   
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 
   @include breakpoint(medium) {
     flex: 0 0 auto;
-    padding: $grid-gutter-medium 0;
+    padding: 0 0 $grid-gutter-medium;
   }
 
   @include breakpoint(large) {
     flex: 0 0 50%;
+    padding: $grid-gutter-medium 0;
   }
 }
 
 .weather__title {
   @include font-styles("body");
   font: inherit;
+
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 
-  margin-bottom: 1rem;
+  width: min-content;
+  background: $white;
+  color: $cobalt;
+
+  margin-bottom: 1.9rem;
+  padding: .25em .5em;
 
   grid-area: title;
 }
@@ -96,11 +104,9 @@
 
 .weather__icon--main {
   grid-area: icon;
-  align-self: center;
-  justify-self: center;
 
   width: 3.5rem;
-  margin: 0 auto;
+  margin-left: 1.5rem;
 }
 
 .weather__temparatur {

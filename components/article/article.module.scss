@@ -52,15 +52,13 @@
 .article--column {
   grid-column-end: span 12;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 0 $grid-gutter;
-  grid-template-areas: "image type" "image title" "image footer";
+  grid-template-columns: 1fr;
+  grid-template-areas: "image" "type" "title" "footer";
 
   @include breakpoint(medium) {
     grid-gap: 0 $grid-gutter-medium;
-    grid-column-end: span 6;
-    grid-template-columns: 1fr;
-    grid-template-areas: "image" "type" "title" "footer";
+    grid-column-end: span 6;  
   }
 
   @include breakpoint(large) {
@@ -104,9 +102,10 @@
   .article--column & {
     grid-area: image;
     margin-bottom: 0;
+    margin-bottom: 1.25rem;
     
-    @include breakpoint(medium) {
-      margin-bottom: 1.25rem;
+    @include breakpoint(large) {
+      margin-bottom: 0;
     }
   }
 }

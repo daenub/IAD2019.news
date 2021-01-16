@@ -144,10 +144,14 @@
 
 .article__description {
   @include font-styles("body");
-  margin-bottom: 2rem;
+  margin-bottom: .75rem;
 
-  .article--column & {
-    grid-area: description;
+  .article--main & {
+    margin-bottom: 2rem;
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: 2rem;
   }
 }
 

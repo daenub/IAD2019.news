@@ -71,6 +71,7 @@
   @include breakpoint(large) {
     flex: 0 0 50%;
     padding: $grid-gutter-medium 0;
+    justify-content: center;
   }
 }
 

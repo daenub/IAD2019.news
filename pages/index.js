@@ -20,8 +20,8 @@ export default function Home({articlesByCategory, headlines}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>The News</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Header />

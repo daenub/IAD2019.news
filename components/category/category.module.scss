@@ -4,6 +4,7 @@
 $line-space: 1rem;
 
 .category {
+  @include small-clamp();
   @include font-styles("h2");
   grid-column-end: span 12;
 

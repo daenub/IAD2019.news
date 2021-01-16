@@ -5,3 +5,17 @@
     @content;
   }
 }
+
+@mixin small-clamp() {
+  width: 100%;
+  max-width: $small-clamp;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(medium) {
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -11,23 +11,29 @@ $scroll-button-width-medium: $grid-gutter-medium;
   display: flex;
   flex-wrap: wrap;
 
-  padding-top: 3rem;
+  padding-top: 1.5rem;
   margin-bottom: $grid-gutter;
 
   @include breakpoint(medium) {
+    padding-top: 3rem;
     margin-bottom: $grid-gutter-medium;
   }
 }
 
 .header__title {
-  @include font-styles("h1");
+  @include font-styles("h2");
   color: $white;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   background-color: $cobalt;
 
   padding: .3em .5em .25em;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1rem auto;
+
+  @include breakpoint(medium) {
+    @include font-styles("h1");
+    margin-bottom: 2rem;
+  }
 }
 
 .navigation {
